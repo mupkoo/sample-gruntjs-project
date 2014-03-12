@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mupkoo/sample-gruntjs-project/issues"
   },
-  "homepage": "https://github.com/mupkoo/sample-gruntjs-project"
+  "homepage": "https://github.com/mupkoo/sample-gruntjs-project",
+  "devDependencies": {
+    "grunt": "^0.4.4"
+  }
 }
