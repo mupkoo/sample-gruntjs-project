@@ -19,9 +19,15 @@ module.exports = (grunt) ->
                 files:
                     'dev/index.html': [ 'src/shared/_header.slim', 'src/index.slim', 'src/shared/_footer.slim' ]
 
+        coffeelint:
+            app: [ 'src/js/*.coffee', 'src/js/**/*.coffee' ]
+            options:
+                indentation:
+                    level: 'ignore'
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-slim'
+    grunt.loadNpmTasks 'grunt-coffeelint'
 
-    grunt.registerTask 'default', [ 'coffee', 'sass' ]
+    grunt.registerTask 'default', [ 'cofffeelint', 'coffee', 'sass' ]
