@@ -12,8 +12,16 @@ module.exports = (grunt) ->
                 files:
                     'dev/js/main.js': 'src/js/main.coffee'
 
+        slim:
+            dist:
+                options:
+                    pretty: true
+                files:
+                    'dev/index.html': [ 'src/shared/_header.slim', 'src/index.slim', 'src/shared/_footer.slim' ]
+
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
+    grunt.loadNpmTasks 'grunt-slim'
 
     grunt.registerTask 'default', [ 'coffee', 'sass' ]
