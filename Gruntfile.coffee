@@ -16,3 +16,4 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
 
+    grunt.registerTask 'default', [ 'coffee', 'sass' ]
