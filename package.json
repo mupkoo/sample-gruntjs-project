@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mupkoo/sample-gruntjs-project",
   "devDependencies": {
     "grunt": "^0.4.4",
-    "grunt-contrib-sass": "^0.7.3"
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-coffee": "^0.10.1"
   }
 }

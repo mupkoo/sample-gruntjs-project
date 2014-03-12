@@ -7,4 +7,12 @@ module.exports = (grunt) ->
                 files:
                     'dev/css/main.css': 'src/css/main.scss'
 
+        coffee:
+            compile:
+                files:
+                    'dev/js/main.js': 'src/js/main.coffee'
+
+
     grunt.loadNpmTasks 'grunt-contrib-sass'
+    grunt.loadNpmTasks 'grunt-contrib-coffee'
+
