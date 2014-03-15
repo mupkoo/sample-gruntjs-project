@@ -12,13 +12,6 @@ module.exports = (grunt) ->
                 files:
                     'dev/js/main.js': 'src/js/main.coffee'
 
-        slim:
-            dist:
-                options:
-                    pretty: true
-                files:
-                    'dev/index.html': [ 'src/shared/_header.slim', 'src/index.slim', 'src/shared/_footer.slim' ]
-
         coffeelint:
             app: [ 'src/js/*.coffee', 'src/js/**/*.coffee' ]
             options:
@@ -27,7 +20,6 @@ module.exports = (grunt) ->
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
-    grunt.loadNpmTasks 'grunt-slim'
     grunt.loadNpmTasks 'grunt-coffeelint'
 
     grunt.registerTask 'default', [ 'coffeelint', 'coffee', 'sass' ]

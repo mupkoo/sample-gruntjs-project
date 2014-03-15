@@ -20,7 +20,6 @@
     "grunt": "^0.4.4",
     "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-coffee": "^0.10.1",
-    "grunt-slim": "^0.1.0",
     "grunt-coffeelint": "0.0.8"
   }
 }
