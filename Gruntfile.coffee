@@ -3,14 +3,15 @@ module.exports = (grunt) ->
         pkg: grunt.file.readJSON 'package.json'
 
         sass:
-            dist:
+            dev:
                 files:
                     'dev/css/main.css': 'src/css/main.scss'
 
         coffee:
-            compile:
-                files:
-                    'dev/js/main.js': 'src/js/main.coffee'
+            dev:
+                compile:
+                    files:
+                        'dev/js/main.js': 'src/js/main.coffee'
 
         coffeelint:
             app: [ 'src/js/*.coffee', 'src/js/**/*.coffee' ]
@@ -18,8 +19,18 @@ module.exports = (grunt) ->
                 indentation:
                     level: 'ignore'
 
+        includereplace:
+            options:
+                prefix: '<!-- @@'
+                suffix: ' -->'
+            dev:
+                src: 'src/*.html'
+                dest: 'tmp/'
+
+
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-coffeelint'
+    grunt.loadNpmTasks 'grunt-include-replace'
 
-    grunt.registerTask 'default', [ 'coffeelint', 'coffee', 'sass' ]
+    grunt.registerTask 'default', [ 'coffeelint', 'coffee:dev', 'sass:dev', 'includereplace:dev' ]

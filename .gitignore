@@ -1,4 +1,5 @@
-node_modules
-dev
-build
-.sass-cache
+tmp/
+node_modules/
+dev/
+build/
+.sass-cache/
