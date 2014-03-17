@@ -29,10 +29,25 @@ module.exports = (grunt) ->
                 expand: true
                 cwd: 'src/'
 
+        watch:
+            css:
+                files: 'src/**/*.scss'
+                tasks: [ 'sass:dev' ]
+                options: { livereload: true }
+            html:
+                files: 'src/**/*.html'
+                tasks: [ 'includereplace:dev' ]
+                options: { livereload: true }
+            js:
+                files: 'src/**/*.scss'
+                tasks: [ 'coffeelint', 'coffee:dev' ]
+                options: { livereload: true }
+
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-coffeelint'
     grunt.loadNpmTasks 'grunt-include-replace'
+    grunt.loadNpmTasks 'grunt-contrib-watch'
 
     grunt.registerTask 'default', [ 'coffeelint', 'coffee:dev', 'sass:dev', 'includereplace:dev' ]
