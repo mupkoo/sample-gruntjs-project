@@ -24,8 +24,10 @@ module.exports = (grunt) ->
                 prefix: '<!-- @@'
                 suffix: ' -->'
             dev:
-                src: 'src/*.html'
-                dest: 'tmp/'
+                src: '*.html',
+                dest: 'dev'
+                expand: true
+                cwd: 'src/'
 
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
