@@ -43,11 +43,27 @@ module.exports = (grunt) ->
                 tasks: [ 'coffeelint', 'coffee:dev' ]
                 options: { livereload: true }
 
+        connect:
+            options:
+                keepalive: true
+                hostname: 'localhost'
+            livereload:
+                options:
+                    port: 35729
+                    base: 'dev'
+            dev:
+                options:
+                    port: 9000
+                    open: true
+                    base: 'dev'
+                    hostname: 'localhost'
+
 
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-coffeelint'
     grunt.loadNpmTasks 'grunt-include-replace'
     grunt.loadNpmTasks 'grunt-contrib-watch'
+    grunt.loadNpmTasks 'grunt-contrib-connect'
 
     grunt.registerTask 'default', [ 'coffeelint', 'coffee:dev', 'sass:dev', 'includereplace:dev' ]
